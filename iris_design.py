@@ -2,8 +2,8 @@ import numpy as np
 from splayout import *
 import sys
 sys.path.append(".")
-from naa.rodmetamaterialopt import RodMetaMaterialRegion2D, AdjointForRodMetaMaterialRegion
-from naa.constraints import min_feature_constrain
+from adjoint.rodmetamaterialopt import RodMetaMaterialRegion2D, AdjointForRodMetaMaterialRegion
+from adjoint.constraints import min_feature_constrain
 import os
 import time
 

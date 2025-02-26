@@ -30,7 +30,7 @@ code/
 │
 ├── dataset/                    # Directory for iris dataset files (standardized with Fisher,R. A. Iris. UCI Machine Learning Repository https://doi.org/10.24432/C56C76 (1988).)
 │
-├── naa/                      # design method and constraints implementation
+├── adjoint/                      # design method and constraints implementation
 │   ├── constraints.py             # constraints implementation
 │   └── rodmetamaterialopt.py         # adjoint method implementation
 │
