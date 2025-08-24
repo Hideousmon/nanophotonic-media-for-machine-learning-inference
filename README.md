@@ -40,8 +40,8 @@ python ocr.py
   The dataset located at `datasets/ocr` is a standardized version of the Optical Recognition of Handwritten Digits dataset:  
   Alpaydin, E. & Kaynak, C. *Optical Recognition of Handwritten Digits*. UCI Machine Learning Repository. https://doi.org/10.24432/C50P49 (1998).  
 
-## Citation
-```shell
+## To Cite
+```text
 @misc{zhao2025high,
   title        = {High computational density nanophotonic media for machine learning inference},
   author       = {Zhenyu Zhao and Yichen Pan and Jinlong Xiang and Yujia Zhang and An He and Yaotian Zhao and Youlve Chen and Yu He and Xinyuan Fang and Yikai Su and Min Gu and Xuhan Guo},
