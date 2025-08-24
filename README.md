@@ -3,38 +3,76 @@ The implementation code for the research paper "High Computational Density Nanop
 ## System Requirements
 
 ### Core Dependencies
-- **Python**: Version 3.6 or higher
+- **Python**: Version 3.9
 - **Python Packages**:
-  - `splayout` >= 0.5.4
-  - `numpy` >= 1.24.3
-  - `scipy` >= 1.10.1
+  - `splayout` == 0.5.15
+  - `numpy` == 1.24.3
+  - `scipy` == 1.10.1
+  - `jaxlib` == 0.4.30
+  - `jax` == 0.4.30
 
 ### Required Software
-- **Ansys Lumerical**: Version 2020 R2 or newer
+- **Ansys Lumerical**: Version 2024 R1 or newer
 
 ## Execution Instructions
 
-To run the primary design script, use the following command in your terminal:
-
+First, install the package:
 ```bash
-python iris_design.py
+python setup.py install
 ```
+To run the iris classification task (Default on GPU): 
+```bash
+# go to the iris_classification directory
+python iris.py
+```
+To run the digits classification task (On CPU, Require 64GB RAM to run): 
+```bash
+# go to the digits_classification directory
+python ocr.py
+```
+## Datasets
 
-## Dataset
-The dataset utilized in this study is a standardized version of the Iris dataset originally Fisher,R. A. Iris. UCI Machine Learning Repository https://doi.org/10.24432/C56C76 (1988).
+- **Iris Dataset**  
+  The dataset located at `datasets/iris` is a standardized version of the classic Iris dataset:  
+  Fisher, R. A. *Iris*. UCI Machine Learning Repository. https://doi.org/10.24432/C56C76 (1988).  
 
+- **Optical Recognition of Handwritten Digits Dataset**  
+  The dataset located at `datasets/ocr` is a standardized version of the Optical Recognition of Handwritten Digits dataset:  
+  Alpaydin, E. & Kaynak, C. *Optical Recognition of Handwritten Digits*. UCI Machine Learning Repository. https://doi.org/10.24432/C50P49 (1998).  
+
+## Citation
+```shell
+@misc{zhao2025high,
+  title        = {High computational density nanophotonic media for machine learning inference},
+  author       = {Zhenyu Zhao and Yichen Pan and Jinlong Xiang and Yujia Zhang and An He and Yaotian Zhao and Youlve Chen and Yu He and Xinyuan Fang and Yikai Su and Min Gu and Xuhan Guo},
+  year         = {2025},
+  eprint       = {arXiv:2506.14269},
+  archivePrefix = {arXiv},
+  primaryClass = {physics.optics},
+}
+```
 
 ## Project Structure
 ```shell
 code/
 │
-├── dataset/                    # Directory for iris dataset files (standardized with Fisher,R. A. Iris. UCI Machine Learning Repository https://doi.org/10.24432/C56C76 (1988).)
+├── datasets/                       # directory for datasets
 │
-├── adjoint/                      # design method and constraints implementation
-│   ├── constraints.py             # constraints implementation
-│   └── rodmetamaterialopt.py         # adjoint method implementation
+├── nao/                            # design method and constraints implementation
+│   ├── rodconstrain.py             # constraints implementation
+│   ├── adjointrodcomplexdirect.py  # nao method implementation
+│   ├── backend.py         
+│   └── rodregion.py                # nao method implementation
 │
-├── iris_design.py                 # main design script
-├── LICENSE                    # license
-└── README.md                   # project overview
+├── iris_classification/            # directory for iris classification task
+│   ├── batch_preprocess.py             
+│   └── iris.py                     # script to run the design for the iris classification task
+│
+├── digits_classification/          # directory for digits classification task
+│   ├── batch_preprocess.py             
+│   └── ocr.py                      # script to run the design for the digits classification task
+│
+├── setup.py                        # setup for the package of the design method
+├── LICENSE                         # license
+└── README.md                       # project overview
 ```
